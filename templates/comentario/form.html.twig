@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h2 class="mb-4">Formulario de Comentarios</h2>
+        
+        {{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+        
+        <div class="mb-3">
+            {{ form_label(form.nombreAutor, 'Nombre', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.nombreAutor, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.nombreAutor) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.texto, 'Texto', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.texto, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.texto) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.fecha, 'Fecha', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.fecha, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.fecha) }}
+        </div>
+
+        
+
+        <div class="mb-3">
+             {{ form_label(form.numPositivas, 'NumPositivas', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.numPositivas, {'attr': {'class': 'form-control', 'value': '0'}}) }}
+            {{ form_errors(form.numPositivas) }}
+        </div>
+        <div class="mb-3">
+            {{ form_label(form.numNegativas, 'NumNegativas', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.numNegativas, {'attr': {'class': 'form-control', 'value': '0'}}) }}
+            {{ form_errors(form.numNegativas) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar Coemntario</button>
+        
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

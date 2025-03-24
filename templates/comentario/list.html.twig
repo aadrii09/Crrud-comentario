@@ -1,0 +1,20 @@
+{# Formulario de búsqueda #}
+<form method="get" action="{{ path('comentarios_list') }}">
+    <input type="text" 
+           name="busqueda" 
+           value="{{ searchTerm }}"
+           placeholder="Buscar en comentarios..."
+           class="form-control">
+    <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+</form>
+
+{# Listado de comentarios #}
+{% for comentario in comentarios %}
+    <div class="comentario">
+        <h4>{{ comentario.nombreAutor }}</h4>
+        <p>{{ comentario.texto }}</p>
+
+    </div>
+{% else %}
+    <p>No se encontraron comentarios</p>
+{% endfor %}
