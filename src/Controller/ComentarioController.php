@@ -19,11 +19,11 @@ final class ComentarioController extends AbstractController
 
         $listaComentario=$entityManagerInterface->getRepository(Comentario::class)->findAll();
         
-        $cuenta=count($listaComentario);
+       
 
         return $this->render('comentario/index.html.twig', [
             'listaComentario'=>$listaComentario,
-            'cuenta'=>$cuenta,
+   
         ]);
     }
 // crear
@@ -61,7 +61,7 @@ public function dislike(Comentario $review, EntityManagerInterface $entityManage
     return $this->redirectToRoute('listar');
 }
 
-
+//buscador para filtrar por nombre y texto
 #[Route('/comentarios', name: 'comentarios_list')]
 public function list(Request $request, EntityManagerInterface $em): Response
 {

@@ -23,6 +23,7 @@
                     <td>{{ comentario.numPositivas }}</td>
                     <td>{{ comentario.numNegativas }}</td>
                     <td>
+                    {# boton de like #}
                     <button>
                      <a href="{{ path('like', {'id': comentario.id}) }}">
                             <i class="bi bi-pencil"></i> Valorar positivamente
@@ -30,6 +31,7 @@
                     </button>
                     </td>
                     <td>
+                    {# boton de dislike #}
                     <button>
                      <a  href="{{ path('dislike', {'id': comentario.id}) }}">
                             <i class="bi bi-pencil"></i> Valorar negativamente
